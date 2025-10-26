@@ -7,3 +7,8 @@
   height: 70px;
   padding: 0px 32px;
 }
+
+.navbar img {
+  height: 40px;               
+  margin-left: 10px;          
+}
