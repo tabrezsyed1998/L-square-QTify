@@ -1,12 +1,23 @@
-import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import HomePage from "./pages/HomePage/HomePage";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#34C94B",
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Navbar />
+        <HomePage />
+      </div>
+    </ThemeProvider>
   );
 }
 
