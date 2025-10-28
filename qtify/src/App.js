@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import HomePage from "./pages/HomePage/HomePage";
+import { Outlet } from "react-router-dom";
+import useFetch from "./hooks/useFetch";
 
 const theme = createTheme({
   palette: {
@@ -11,11 +12,13 @@ const theme = createTheme({
 });
 
 function App() {
+  const { response: genres } = useFetch("/genres");
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
         <Navbar />
-        <HomePage />
+        <Outlet context={{ genres: genres }} />
       </div>
     </ThemeProvider>
   );
