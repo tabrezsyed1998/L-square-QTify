@@ -8,6 +8,8 @@ function HomePage() {
         <div>
             <Hero />
             <Section title="Top Albums" path="/albums/top" collapse type="album"/>
+            <Section title="New Albums" path="/albums/new" collapse type="album"/>
+           
         </div>
     )
 }
